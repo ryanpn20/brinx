@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :commit_pages
   resources :subscriptions
   resources :commitments
