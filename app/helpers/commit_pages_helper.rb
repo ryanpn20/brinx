@@ -1,0 +1,2 @@
+module CommitPagesHelper
+end

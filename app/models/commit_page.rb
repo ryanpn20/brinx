@@ -1,0 +1,2 @@
+class CommitPage < ApplicationRecord
+end

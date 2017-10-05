@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005164635) do
+ActiveRecord::Schema.define(version: 20171005165602) do
+
+  create_table "commit_pages", force: :cascade do |t|
+    t.string "top_commit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "commitments", force: :cascade do |t|
     t.float "price"

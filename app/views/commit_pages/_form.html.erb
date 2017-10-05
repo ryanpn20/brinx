@@ -1,0 +1,22 @@
+<%= form_with(model: commit_page, local: true) do |form| %>
+  <% if commit_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commit_page.errors.count, "error") %> prohibited this commit_page from being saved:</h2>
+
+      <ul>
+      <% commit_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :top_commit %>
+    <%= form.text_field :top_commit, id: :commit_page_top_commit %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
