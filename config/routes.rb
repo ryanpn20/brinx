@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :commit_pages
   resources :subscriptions
   resources :commitments
   root 'users#index'
