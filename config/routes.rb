@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+  resources :comments
+  resources :commit_pages
+>>>>>>> b2b28bcb65b00fc3ae7b04559478be8315535cf3
   resources :subscriptions
   resources :commitments
   root 'users#index'
