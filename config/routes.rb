@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subscriptions
+  resources :commitments
   root 'users#index'
 
   resources :users
