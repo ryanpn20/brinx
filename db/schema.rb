@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005165602) do
+ActiveRecord::Schema.define(version: 20171005195826) do
+
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "commit_pages", force: :cascade do |t|
     t.string "top_commit"
@@ -22,6 +27,15 @@ ActiveRecord::Schema.define(version: 20171005165602) do
     t.float "price"
     t.integer "topic_id"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "title"
+    t.string "course_type"
+    t.integer "instuctor_id"
+    t.integer "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
