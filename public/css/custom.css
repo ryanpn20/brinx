@@ -119,7 +119,7 @@ a:hover#back-to-top {
 
 .intro {
 	color: #fff;
-    background-color: yellowgreen;
+    background-color: rgba(30, 182, 232, 0.8);
     padding: 70px 0;
     text-align: center;
 }
