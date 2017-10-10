@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171005211808) do
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer "unit_id"
     t.integer "user_id"
     t.text "comment"
@@ -20,15 +20,21 @@ ActiveRecord::Schema.define(version: 20171005211808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "commitments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.float "price", limit: 24
+  create_table "commit_pages", force: :cascade do |t|
+    t.string "top_commit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commitments", force: :cascade do |t|
+    t.float "price"
     t.integer "topic_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "course_type"
     t.integer "instuctor_id"
@@ -37,7 +43,7 @@ ActiveRecord::Schema.define(version: 20171005211808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "instructors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "instructors", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password"
@@ -45,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171005211808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "subscriptions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "course_id"
     t.datetime "expiration"
@@ -53,7 +59,7 @@ ActiveRecord::Schema.define(version: 20171005211808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "language"
     t.text "description"
@@ -62,7 +68,7 @@ ActiveRecord::Schema.define(version: 20171005211808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "units", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "units", force: :cascade do |t|
     t.string "name"
     t.integer "duration"
     t.text "embed_code"
@@ -70,7 +76,7 @@ ActiveRecord::Schema.define(version: 20171005211808) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password"
