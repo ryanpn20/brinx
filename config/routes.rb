@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :comments
   resources :subscriptions
   resources :commitments
-  root 'users#index'
+  root 'static_pages#home'
   resources :users
+
+  get 'contact', to: 'static_pages#contact', as: 'contact'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
