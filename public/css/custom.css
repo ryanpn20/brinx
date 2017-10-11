@@ -137,14 +137,24 @@ a:hover#back-to-top {
   }
 
   .stats_box li {
-      background: #EEEEEE;
+      background: white;
       border-radius: 3px;
       box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;
       display: inline-block;
       line-height: 18px;
       margin: 0 10px 10px;
-      padding: 0 10px;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      padding: 0 30px 0 10px;
+      color: black;
+  }
+
+  .stats_box .sparkline {
+    width: 50px;
+    border-right: 1px solid #DCDCDC;
+    box-shadow: 1px 0 0 0 #ffffff;
+    float: left;
+    margin-right: 12px;
+    padding: 10px 14px 0px 4px;
+    line-height: 52px;
   }
 
   .stats_box .stat_text {
@@ -165,22 +175,19 @@ a:hover#back-to-top {
       font-weight: bold;
   }
 
-  .stats_box .stat_text .percent.down {
-    color: #C52F61;
-}
+
 
 .stats_box .stat_text .percent {
     float: right;
     font-size: 20px;
     font-weight: bold;
     position: absolute;
-    right: 0;
-    top: 17px;
-}
-
-.stats_box .stat_text .percent.up {
+    right: -25px;
+    top: 12px;
     color: #46a546;
 }
+
+
 
 .content {
     padding: 100px 0;
