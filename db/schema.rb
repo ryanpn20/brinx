@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005211808) do
+ActiveRecord::Schema.define(version: 20171011213743) do
 
   create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commit_pages", force: :cascade do |t|
+    t.string "top_commit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,10 +34,10 @@ ActiveRecord::Schema.define(version: 20171005211808) do
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "course_type"
-    t.integer "instuctor_id"
     t.integer "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "instructor_id"
   end
 
   create_table "instructors", force: :cascade do |t|
