@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand custom-logo" href="#">
-                
+
                   <%= link_to image_tag('logoandletterwhite'), root_path %>
                 </div>
             </div>
@@ -24,16 +24,28 @@
                     <li>
                         <a href="#">Login</a>
                     </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="about-us">
-              <li><a href="#">Top Commitments</a></li>
-              <li><a href="#">Create Course</a></li>
-              <li><a href="#">Find Courses</a></li>
-            </ul>
-          </li>
+
                     <li class="<%=active_class('/contact')%>">
-                        <%= link_to 'Contact', contact_path %>
+                      <%= link_to 'Contact', contact_path %>
+                    </li>
+
+                    <div class="dropdown">
+                      <a href="" id="grid">
+                        <i class="fa fa-th-large" aria-hidden="true"></i>
+                      </a>
+
+                      <div class="dropdown-content">
+                        <a href="#"><i class="fa fa-code" aria-hidden="true"></i> Development</a>
+                        <a href="#"><i class="fa fa-flask" aria-hidden="true"></i> Data Science</a>
+                        <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> IT</a>
+                        <a href="#"><i class="fa fa-line-chart" aria-hidden="true"></i> Analytics</a>
+                        <a href="#"><i class="fa fa-paint-brush" aria-hidden="true"></i> Design</a>
+                        <a href="#"><i class="fa fa-cloud" aria-hidden="true"></i> Software</a>
+                        <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Hardware</a>
+                      </div>
+                    </div>
+                    <li class="<%=active_class('/course')%>">
+                        <%= link_to 'Courses', courses_path %>
                     </li>
                 </ul>
 
