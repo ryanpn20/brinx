@@ -97,65 +97,145 @@
           <input type="text" name="search" placeholder="Search..">
         </form>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Content 2 -->
-<section class="content-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h2 class="section-header">Create a course</h2>
-        <div class="container">
-  <form action="/action_page.php">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Country</label>
-      </div>
-      <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">Subject</label>
-      </div>
-      <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-</div>
-
-      </div>
-      <!-- <div class="col-sm-6">
-        <img class="img-responsive img-circle center-block" src="images/grid-AI.jpg" alt="">
-      </div> -->
-
+  <!-- Content 2 -->
+  <section class="content-2">
+    <div class="container">
+      <span><p class="section-header">Couldn't find a course?
+        Maybe you've been searching for a topic that no one is talking about!?
+        Now you have full control of your learning and future!
+        <strong>BRINX</strong> is the first platform that allows <strong>YOU</strong> to create the courses you want to learn
+        about and have a certified professional in the field that you're
+        interested in develop a course completly customized to what the student wants.
+        Below you can create a detailed course, commit it, promote it,
+        and once it has gained enough traction and other commitments an
+        instructor will develop the perfect course specifically for you!</p></span>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="container">
+            <form action="/action_page.php">
+              <div class="row">
+                <div class="col-25">
+                  <label for="course-title">Topic Title</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="course-title" name="title" placeholder="What would you like this course to be called?">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="course-cat">Topic Category </label>
+                </div>
+                <div class="col-75">
+                  <select id="course-cat" name="category">
+                    <option value="devlopment">Development</option>
+                    <option value="data">Data Science</option>
+                    <option value="it">IT</option>
+                    <option value="analytics">Analytics</option>
+                    <option value="design">Design</option>
+                    <option value="software">Software</option>
+                    <option value="hardware">Hardware</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="language">Language</label>
+                </div>
+                <div class="col-75">
+                  <select data-placeholder="Choose a Language...">
+                    <option value="Afrikanns">Afrikanns</option>
+                    <option value="Albanian">Albanian</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Armenian">Armenian</option>
+                    <option value="Basque">Basque</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Bulgarian">Bulgarian</option>
+                    <option value="Catalan">Catalan</option>
+                    <option value="Cambodian">Cambodian</option>
+                    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                    <option value="Croation">Croation</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
+                    <option value="Estonian">Estonian</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finnish">Finnish</option>
+                    <option value="French">French</option>
+                    <option value="Georgian">Georgian</option>
+                    <option value="German">German</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <option value="Hebrew">Hebrew</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Hungarian">Hungarian</option>
+                    <option value="Icelandic">Icelandic</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Irish">Irish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Javanese">Javanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Latin">Latin</option>
+                    <option value="Latvian">Latvian</option>
+                    <option value="Lithuanian">Lithuanian</option>
+                    <option value="Macedonian">Macedonian</option>
+                    <option value="Malay">Malay</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Maltese">Maltese</option>
+                    <option value="Maori">Maori</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Mongolian">Mongolian</option>
+                    <option value="Nepali">Nepali</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Quechua">Quechua</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Samoan">Samoan</option>
+                    <option value="Serbian">Serbian</option>
+                    <option value="Slovak">Slovak</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Swedish ">Swedish </option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Tatar">Tatar</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Tibetan">Tibetan</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Ukranian">Ukranian</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Uzbek">Uzbek</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="Welsh">Welsh</option>
+                    <option value="Xhosa">Xhosa</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="description">Topic Description</label>
+                </div>
+                <div class="col-75">
+                  <textarea id="description" name="description" placeholder="What would you want want to be taught in this course?" style="height:200px"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" value="Commit">
+              </div>
+            </form>
+          </div>
+        </div>
     </div>
   </div>
 </section>
@@ -163,25 +243,25 @@
 <!-- Promos -->
 <div class="container-fluid">
   <div class="row promo">
-    <a href="#">
+    <a href="/courses">
       <div class="col-md-4 promo-item item-1">
         <h3>
           Unleash
         </h3>
       </div>
     </a>
-    <a href="#">
+    <a href="/instructors">
       <div class="col-md-4 promo-item item-2">
         <h3>
-          Synergize
+          Instuctors
         </h3>
       </div>
     </a>
 
-    <a href="#">
+    <a href="/subscriptions">
       <div class="col-md-4 promo-item item-3">
         <h3>
-          Procrastinate
+          My Courses
         </h3>
       </div>
     </a>
@@ -191,9 +271,9 @@
 <!-- Content 3 -->
 <section class="content-3">
   <div class="container">
-    <h2 class="section-header"><span class="glyphicon glyphicon-pushpin text-primary"></span><br> Sanity Check</h2>
-    <p class="lead text-muted">Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-    <a href="#" class="btn btn-primary btn-lg">Check Now</a>
+    <h2 class="section-header"><span class="glyphicon glyphicon-btc text-primary"></span><br> BRINX Business</h2>
+    <p class="lead text-muted">Develop your own structed training content for your employees.</p>
+    <a href="/subscriptions/new" class="btn btn-primary btn-lg">Learn More</a>
   </div>
 </div>
 </section>
