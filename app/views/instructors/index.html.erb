@@ -1,31 +1,56 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Instructors</h1>
+<div class="margin-top_angel">
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @instructors.each do |instructor| %>
-      <tr>
-        <td><%= instructor.name %></td>
-        <td><%= instructor.email %></td>
-        <td><%= instructor.password %></td>
-        <td><%= link_to 'Show', instructor %></td>
-        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <p id="notice"><%= notice %></p>
 
+    <div class="col-md-8">
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Instructors</h4>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+
+
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @instructors.each do |instructor| %>
+                <tr>
+                  <td><%= instructor.name %></td>
+                  <td><%= instructor.email %></td>
+                  <td><%= instructor.password %></td>
+                  <td><%= link_to 'Show', instructor %></td>
+                  <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+                  <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 <br>
 
-<%= link_to 'New Instructor', new_instructor_path %>
+<div class="col-md-8">
+  <%= link_to 'New Instructor', new_instructor_path %>
+</div>
