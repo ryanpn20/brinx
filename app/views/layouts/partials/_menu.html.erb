@@ -18,9 +18,6 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="<%=active_class('/')%>">
-                        <%= link_to 'Home', root_path %>
-                    </li>
                     <li>
                         <a href="#">Login</a>
                     </li>
@@ -43,6 +40,10 @@
                         <a href="#"><i class="fa fa-cloud" aria-hidden="true"></i> Software</a>
                         <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Hardware</a>
                       </div>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                          Launch demo modal
+                        </button>
+
                     </div>
                     <li class="<%=active_class('/course')%>">
                         <%= link_to 'Courses', courses_path %>
