@@ -144,8 +144,8 @@ a:hover#back-to-top {
   }
 
   .stats_box li {
-     background: linear-gradient(-45deg, rgba(87, 225, 181, 1) 0%, rgba(0, 63, 255, 1) 100%);
-     box-shadow: 0 5px 20px rgba(0, 63, 255, .5);
+      background: linear-gradient(-45deg, rgba(87, 225, 181, 1) 0%, rgba(0, 63, 255, 1) 100%);
+      box-shadow: 0 5px 20px rgba(0, 63, 255, .5);
       border-radius: 5px;
       display: inline-block;
       line-height: 18px;
@@ -194,6 +194,52 @@ a:hover#back-to-top {
     color: #ff3408;
 }
 
+.course-box {
+   /*background-image: url('../images/web_dev.jpg');*/
+   /*box-shadow: 0 5px 20px rgba(0, 63, 255, .5);*/
+   border-radius: 5px;
+   display: inline-block;
+   line-height: 18px;
+   width: 300px;
+   height: 200px;
+   margin: 25px;
+   padding: 25px;
+   color: whitesmoke;
+}
+
+.course-box-1 {
+  background-image: url('../images/web_dev.jpg');
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 18px;
+  width: 300px;
+  height: 200px;
+  margin: 25px;
+  padding: 25px;
+  color: whitesmoke;
+}
+
+.course-box-2 {
+  background-image: url('../images/8.jpg');
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 18px;
+  width: 300px;
+  height: 200px;
+  margin: 25px;
+  padding: 25px;
+  color: whitesmoke;
+}
+
+.course-box-3
+
+.course-box-4
+
+.course-box-5
+
+.course-box-6
+
+.course-box-7
 
 
 input[type=text] {
@@ -373,7 +419,7 @@ input[type=submit]:hover {
 	}
 
 .glyphicon-btc {
-  
+
 }
 
 .page-footer .small-print {
