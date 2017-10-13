@@ -18,8 +18,10 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
+                <% if !current_user %>
+                
                     <li>
-                        <a href="#">Login</a>
+                        <a href="#" data-toggle="modal" data-target="#myModal">Login</a>
                     </li>
 
                     <li class="<%=active_class('/contact')%>">
@@ -40,16 +42,63 @@
                         <a href="#"><i class="fa fa-cloud" aria-hidden="true"></i> Software</a>
                         <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Hardware</a>
                       </div>
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    <!--   <button type="button" class="btn btn-primary" >
                           Launch demo modal
-                        </button>
+                        </button> -->
 
                     </div>
                     <li class="<%=active_class('/course')%>">
                         <%= link_to 'Courses', courses_path %>
                     </li>
-                </ul>
 
+                <% else %>
+                    <li class="<%=active_class('/course')%>">
+                        <%= link_to '<i class="fa fa-dashboard" ></i>Dashboard'.html_safe, dashboard_path %>
+                    </li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        <%=current_user.name%>&nbsp;
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong><%=current_user.name%></strong></p>
+                                        <p class="text-left small"><%=current_user.email%></p>
+                                        <p class="text-left">
+                                            <a href="#" class="btn btn-warning btn-block btn-sm">Update profile</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="navbar-login navbar-login-session">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <%= link_to 'Logout', logout_path, class: "btn btn-danger btn-block" %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                    
+                
+                <% end %>
+                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
     </nav>

@@ -4,7 +4,7 @@ class CreateInstructors < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :email
       t.string :password
-
+      t.attachment :avatar
       t.timestamps
     end
   end
