@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013023747) do
+ActiveRecord::Schema.define(version: 20171013145235) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "unit_id"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20171013023747) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "phone", limit: 8
+    t.string "password_digest"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 20171013023747) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "phone", limit: 8
   end
 
 end
