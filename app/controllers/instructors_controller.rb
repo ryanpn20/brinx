@@ -26,14 +26,13 @@ class InstructorsController < ApplicationController
   def create
     @instructor = Instructor.new(instructor_params)
 
-    respond_to do |format|
-      if @instructor.save
-        format.html { redirect_to @instructor, notice: 'Instructor was successfully created.' }
-        format.json { render :show, status: :created, location: @instructor }
-      else
-        format.html { render :new }
-        format.json { render json: @instructor.errors, status: :unprocessable_entity }
-      end
+    if @instructor.save
+      log_in @instructor
+      flash[:success] = 'Register successfully completed'
+      redirect_to dashboard_path
+    else
+      flash[:errors] = @instructor.errors
+      redirect_to request.referer
     end
   end
 
@@ -69,6 +68,6 @@ class InstructorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instructor_params
-      params.require(:instructor).permit(:name, :email, :password)
+      params.require(:instructor).permit(:name, :email, :password, :phone)
     end
 end
