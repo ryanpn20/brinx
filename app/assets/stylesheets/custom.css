@@ -92,10 +92,9 @@
 .footer-bottom {
     background: #E3E3E3 ;
     /*border-top: 1px solid #31c6ef ;*/
-    padding-top: 10px;
+    /*padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 60px;
-    /*position: absolute;*/
+    margin-top: 60px;*/
     bottom: 0;
     /*position: fixed;*/
     right: 0;
@@ -109,4 +108,8 @@
 
 h1, h2, h3, .h1, .h2, .h3 {
   /*margin-top: 60px;*/
+}
+
+.margin-top {
+  padding-top: 70px;
 }
