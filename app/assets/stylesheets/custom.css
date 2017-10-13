@@ -103,7 +103,8 @@
     z-index: 1030;
 }
 .footer-bottom p.pull-left {
-    padding-top: 6px;
+    padding-top: 20px;
+    color: grey;
 }
 
 h1, h2, h3, .h1, .h2, .h3 {
