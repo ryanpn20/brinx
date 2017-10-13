@@ -1,31 +1,45 @@
-<p id="notice"><%= notice %></p>
+<section class="first-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>My current Courses</h1>
+          <table class="table table-stripped">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Course</th>
+                <th>Expiration</th>
+                <th>Units</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
-<h1>Subscriptions</h1>
+            <tbody>
+              <% @subscriptions.each_with_index do |subscription, index| %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= subscription.course.title %></td>
+                  <td><%= subscription.expiration %></td>
+                  <td><%= subscription.course.units.count %></td>
+                  <td><%= link_to 'Show', subscription %></td>
+                  <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
+                  <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+      
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Course</th>
-      <th>Expiration</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subscriptions.each do |subscription| %>
-      <tr>
-        <td><%= subscription.user_id %></td>
-        <td><%= subscription.course_id %></td>
-        <td><%= subscription.expiration %></td>
-        <td><%= link_to 'Show', subscription %></td>
-        <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-        <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Subscription', new_subscription_path %>
+    </div>
+  </div>
+</section>
+<% if flash[:success] %>
+<script>
+  swal({
+    html:true,
+    title: "<%= flash[:success] %>",
+    text: '<img draggable="false" class="emoji" alt="😀" src="https://s.w.org/images/core/emoji/2.3/svg/1f600.svg" style="max-width: 20%;">'
+  });
+</script>
+<% end %>
