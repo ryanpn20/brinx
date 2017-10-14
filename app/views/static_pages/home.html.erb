@@ -16,12 +16,10 @@
             <img src="../images/white.png" class="img-responsive" alt="logo">
             <p>The future of learning is here</p>
 
-<header>
-  <div class="header-content">
-    <div class="header-content-inner">
-      <img class="img-responsive" src="../images/white.png" alt="logo">
-      <p>The future of learning is here</p>
-      <a href="/subscriptions/new" class="btn btn-primary btn-lg">Engage Now</a>
+            <%= link_to 'Engage Now', new_user_path, class: 'btn btn-primary btn-lg' %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -105,69 +103,72 @@
           <input type="text" name="search" placeholder="Search..">
         </form>
       </div>
-      <div class="col-md-12">
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-1">
-            </div>
-            <div class="middle">
-              <div class="text">DEVELOPMENT</div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-2">
-            </div>
-            <div class="middle">
-              <div class="text">IT</div>
-            </div>
+        <div class="row">
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-1">
+              </div>
+              <div class="middle">
+                <div class="text">DEVELOPMENT</div>
+              </div>
+            </a>
           </div>
-          </a>
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-3">
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-2">
+              </div>
               <div class="middle">
-                <div class="text">ANALYTICS</div>
+                <div class="text">IT</div>
               </div>
             </div>
-          </a>
+            </a>
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-3">
+                <div class="middle">
+                  <div class="text">ANALYTICS</div>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-4">
-              <div class="middle">
-                <div class="text">DESIGN</div>
+        <div class="row">
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-4">
+                <div class="middle">
+                  <div class="text">DESIGN</div>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-5">
-              <div class="middle">
-                <div class="text">SOFTWARE</div>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-5">
+                <div class="middle">
+                  <div class="text">SOFTWARE</div>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-6">
-              <div class="middle">
-                <div class="text">HARDWARE</div>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-6">
+                <div class="middle">
+                  <div class="text">HARDWARE</div>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="/courses">
-            <div class="course-box-7">
-              <div class="middle">
-                <div class="text">DATA SCIENCE</div>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="/courses">
+              <div class="course-box-7">
+                <div class="middle">
+                  <div class="text">DATA SCIENCE</div>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
