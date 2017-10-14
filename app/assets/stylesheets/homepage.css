@@ -331,7 +331,7 @@ a:hover .middle {
   border-radius: 5px;
   display: inline-block;
   line-height: 18px;
-  width: 400px;
+  width: 375px;
   height: 225px;
   margin: 25px;
   padding: 25px;
@@ -342,7 +342,7 @@ a:hover .middle {
   border-radius: 5px;
   display: inline-block;
   line-height: 18px;
-  width: 400px;
+  width: 375px;
   height: 225px;
   margin: 25px;
   padding: 25px;
@@ -353,7 +353,7 @@ a:hover .middle {
   border-radius: 5px;
   display: inline-block;
   line-height: 18px;
-  width: 400px;
+  width: 375px;
   height: 225px;
   margin: 25px;
   padding: 25px;
@@ -656,14 +656,14 @@ input[type=submit] {
     }
 }
 
-.btn-default {
+/*.btn-default {
     border-color: #fff;
     color: #222;
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
-}
+}*/
 
 .btn-default:hover,
 .btn-default:focus,
