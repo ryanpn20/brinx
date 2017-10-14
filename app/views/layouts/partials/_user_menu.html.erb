@@ -2,20 +2,24 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
-          </span>&ensp;Content</a>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-thumbs-up">
+          </span>&ensp;Topics</a>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <ul class="list-group">
-        <li class="list-group-item"><span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://fb.com/moinakbarali">&ensp;Articles</a></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-plus text-success"></span>
 
-        <li class="list-group-item"><span class="glyphicon glyphicon-flash text-success"></span><a href="http://fb.com/moinakbarali">&ensp;News</a></li>
+          <%= link_to '&ensp;&ensp;Create a new topic'.html_safe, new_topic_path %>
+        </li>
 
-        <li class="list-group-item"><span class="glyphicon glyphicon-file text-info"></span><a href="http://fb.com/moinakbarali">Newsletters</a></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-flash text-success"></span>
 
-        <li class="list-group-item"> <span class="glyphicon glyphicon-comment text-success"></span><a href="http://fb.com/moinakbarali">&ensp;Comments</a><span class="badge">42</span></li>
-
+          <%= link_to '&ensp;&ensp;All topics'.html_safe, topics_path %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to '<i class="fa fa-rocket text-success"></i> Hot topics now'.html_safe, topics_path %>
+        </li>
       </ul>
     </div>
   </div>
