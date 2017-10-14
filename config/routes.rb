@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   post  'login', to: 'sessions#create'
   
+  get 'profile', to: 'users#profile'
   get  'logout', to: 'sessions#destroy'
   get 'contact', to: 'static_pages#contact', as: 'contact'
   get 'dashboard', to: 'subscriptions#index', as: 'dashboard'

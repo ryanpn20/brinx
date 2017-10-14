@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013145235) do
+ActiveRecord::Schema.define(version: 20171013192655) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,11 +38,16 @@ ActiveRecord::Schema.define(version: 20171013145235) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "instructor_id"
+    t.text "description"
   end
 
   create_table "instructors", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "phone", limit: 8
@@ -55,6 +60,7 @@ ActiveRecord::Schema.define(version: 20171013145235) do
     t.datetime "expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "topics", force: :cascade do |t|
