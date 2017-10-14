@@ -3,6 +3,11 @@
     margin-top: -13px;
 }
 
+.margin-top_angel {
+  margin-top: 50px;
+}
+
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -87,10 +92,9 @@
 .footer-bottom {
     background: #E3E3E3 ;
     /*border-top: 1px solid #31c6ef ;*/
-    padding-top: 10px;
+    /*padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 60px;
-    /*position: absolute;*/
+    margin-top: 60px;*/
     bottom: 0;
     /*position: fixed;*/
     right: 0;
@@ -98,9 +102,22 @@
     z-index: 1030;
 }
 .footer-bottom p.pull-left {
-    padding-top: 6px;
+    padding-top: 20px;
+    color: grey;
+}
+
+.footer-bottom .container {
+  height: 78px;
+}
+
+.margin-top_angel{
+  /*height: calc(100vh - 130px);*/
 }
 
 h1, h2, h3, .h1, .h2, .h3 {
-  margin-top: 60px;
+  /*margin-top: 60px;*/
+}
+
+.margin-top {
+  padding-top: 70px;
 }

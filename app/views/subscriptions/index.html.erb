@@ -1,31 +1,148 @@
-<p id="notice"><%= notice %></p>
+<section class="first-section">
+  <div class="container">
+  <div class="row">
 
-<h1>Subscriptions</h1>
+   
+      <h1>My subscriptions</h1>
+      <hr/>
+      <div class="col-md-8">
+        <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="pull-right">
+              <div class="btn-group">
+                <button type="button" class="btn btn-success btn-filter" data-target="pagado">Active</button>
+                <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pending</button>
+                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelled</button>
+                <button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
+              </div>
+            </div>
+            <div class="table-container">
+              <table class="table table-filter">
+                <tbody>
+                  <% @subscriptions.each_with_index do |subscription, index| %>
+                  <tr data-status="pagado">
+                    <td>
+                      <div class="ckbox">
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="javascript:;" class="star">
+                        <i class="glyphicon glyphicon-star"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <div class="media">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        <div class="media-body">
+                          <span class="media-meta pull-right">Expires <%= subscription.expiration.strftime("at %b %d, %y") %></span>
+                          <h4 class="title">
+                            <%= subscription.course.title %>
+                            <span class="pull-right pagado">(<%= subscription.status %>)</span>
+                          </h4>
+                          <p class="summary"><%= subscription.course.description %></p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <% end %>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Course</th>
-      <th>Expiration</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+                </span>&ensp;Content</a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <ul class="list-group">
+              <li class="list-group-item"><span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://fb.com/moinakbarali">&ensp;Articles</a></li>
 
-  <tbody>
-    <% @subscriptions.each do |subscription| %>
-      <tr>
-        <td><%= subscription.user_id %></td>
-        <td><%= subscription.course_id %></td>
-        <td><%= subscription.expiration %></td>
-        <td><%= link_to 'Show', subscription %></td>
-        <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-        <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <li class="list-group-item"><span class="glyphicon glyphicon-flash text-success"></span><a href="http://fb.com/moinakbarali">&ensp;News</a></li>
 
-<br>
+              <li class="list-group-item"><span class="glyphicon glyphicon-file text-info"></span><a href="http://fb.com/moinakbarali">Newsletters</a></li>
 
-<%= link_to 'New Subscription', new_subscription_path %>
+              <li class="list-group-item"> <span class="glyphicon glyphicon-comment text-success"></span><a href="http://fb.com/moinakbarali">&ensp;Comments</a><span class="badge">42</span></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+                </span>&ensp;Reports</a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+                Cras justo odio
+              </a>
+              <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item">Morbi leo risus</a>
+              <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+              <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-heart">
+                </span>&ensp;Reports</a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse">
+            <div class="list-group">
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">List group item heading</h4>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              </a>
+            </div>
+            <div class="list-group">
+              <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">List group item heading</h4>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              </a>
+            </div>
+            <div class="list-group">
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">List group item heading</h4>
+                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      
+</div>
+
+      </div>
+    
+  </div>
+</div>
+ 
+</section>
+<% if flash[:success] %>
+  <script>
+    swal({
+      html:true,
+      title: "<%= flash[:success] %>",
+      text: '<img draggable="false" class="emoji" alt="😀" src="https://s.w.org/images/core/emoji/2.3/svg/1f600.svg" style="max-width: 20%;">'
+    });
+  </script>
+<% end %>

@@ -8,20 +8,22 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		user  = User.find_by(email: params[:session][:email].downcase)
-		if user && user.authenticate(params[:session][:password])
+		user  = User.find_by(email: params[:email].downcase)
+		user  = Instructor.find_by(email: params[:email].downcase) if !user
+		
+		if user && user.authenticate(params[:password])
 			log_in user
-			flash[:success] = "Bienvenido de nuevo #{user.name}"
-			redirect_to request.referer
+			flash[:success] = "Welcome back #{user.name}"
+			redirect_to dashboard_path
 		else
-			flash[:danger] = 'Email invalido/Contrasena incorrecta' # Not quite right!
-			redirect_to root_path
+			flash[:danger] = 'Invalid email/Wrong password' # Not quite right!
+			redirect_to request.referer
 		end
 	end
 	
 	def destroy
 		log_out
-		flash[:success] = 'Gracias por visitarnos, esperamos verte pronto'
+		flash[:success] = 'Thanks for visit us'
 		redirect_to root_url
 	end
 	private

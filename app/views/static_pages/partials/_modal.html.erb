@@ -1,0 +1,19 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <%= form_for(:session, url: login_path, html: { class: "no-margin" }) do |f| %>
+      <div class="loginmodal-container text-center">
+        <%= image_tag('logosoloblackback.png', class: 'login_icon') %>
+        <h1>Login to Your Account</h1><br>
+
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <!-- <input type="submit" name="login" class="btn btn-primary" value="Login"> -->
+        <%= f.submit 'Login', class:'btn btn-primary' %>
+        <div class="login-help">
+        <a href="#">Register</a> - <a href="#">Forgot Password</a>
+        </div>
+        </div>
+      </div>
+    <% end %>
+</div>
