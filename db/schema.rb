@@ -17,12 +17,6 @@ ActiveRecord::Schema.define(version: 20171013192655) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "commit_pages", force: :cascade do |t|
-    t.string "top_commit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "commitments", force: :cascade do |t|
     t.float "price"
     t.integer "topic_id"
