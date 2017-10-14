@@ -13,9 +13,12 @@
 ActiveRecord::Schema.define(version: 20171013192655) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer "unit_id"
-    t.integer "user_id"
-    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commit_pages", force: :cascade do |t|
+    t.string "top_commit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,11 +84,7 @@ ActiveRecord::Schema.define(version: 20171013192655) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password_digest"
-    t.string "avatar_file_name"
-    t.string "avatar_content_type"
-    t.integer "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "phone", limit: 8
