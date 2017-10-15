@@ -1,6 +1,17 @@
 <section class="first-section">
 	<div class="responsive-division hidden visible-xs"></div>
 	<div class="container">
+		<% if topic.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+				<ul>
+					<% topic.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 	    <div class="login-signup">
 	      <div class="row">
 	        <div class="col-sm-6 nav-tab-holder">
