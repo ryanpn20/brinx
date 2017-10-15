@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(id: :desc)
   end
 
   # GET /topics/1
@@ -26,15 +26,14 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
 
-    respond_to do |format|
-      if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
-      else
-        format.html { render :new }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-      end
+    if @topic.save
+      flash[:success] = 'Your topic has been saved and waiting for admin aproval in order to be listed'
+      redirect_to topics_path
+    else
+      flash[:errors] = @topic.errors
+      redirect_to request.referer
     end
+
   end
 
   # PATCH/PUT /topics/1
@@ -69,6 +68,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:name, :language, :description, :status)
+      params.require(:topic).permit(:name, :language, :description, :status, :cat, :logo)
     end
 end
