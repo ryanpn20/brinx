@@ -7,14 +7,41 @@
   margin-top: 50px;
 }
 
+h1.create-topic {
+  text-align: center;
+  margin-top: 75px;
+}
 
 #contact_form {
-  margin-top: 133px;
+  margin-top: 55px;
 }
 
 .container-form {
 
 }
+
+
+
+.fa-facebook-square {
+  font-size: 75px;
+  color: #0c66c1
+}
+
+.fa-twitter {
+  font-size: 75px;
+  color: #4fadff
+}
+
+.fa-instagram {
+  font-size: 75px;
+  color: purple;
+}
+
+.fa-google-plus {
+  font-size: 75px;
+  color: orange;
+}
+
 
 .dropdown {
     position: relative;
@@ -26,9 +53,9 @@
   font-size: 250%;
 }
 
-.fa {
+/*#back-to-top.fa {
   margin-right: 15px;
-}
+}*/
 
 .dropdown-content {
     display: none;
