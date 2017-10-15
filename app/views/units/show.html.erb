@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
+<section  class="first-section">
 
-<p>
-  <strong>Name:</strong>
-  <%= @unit.name %>
-</p>
+  <div class="container">
+  <div class="row">
+  	<div class="col-md-9">
+  		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @unit.duration %>
-</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @unit.name %>
+		</p>
 
-<p>
-  <strong>Embed code:</strong>
-  <%= @unit.embed_code %>
-</p>
+		<p>
+		  <strong>Duration:</strong>
+		  <%= @unit.duration %>
+		</p>
 
-<%= link_to 'Edit', edit_unit_path(@unit) %> |
-<%= link_to 'Back', units_path %>
+		<p>
+		  <strong>Embed code:</strong>
+		  <%= @unit.embed_code.html_safe %>
+
+          <%= social_share_button_tag(@unit.name) %>
+
+		</p>
+
+  	</div>
+  	<div class="col-md-3">
+  		<p>
+		  <strong>Comments:</strong>
+		  <%= @unit.comments.each do |c| %>
+		   <span><%= c.comment %></span>
+		  <% end %>
+		</p>
+  	</div>
+
+
+</div>
+</div>
+</section>

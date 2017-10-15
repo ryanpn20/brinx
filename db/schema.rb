@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015001505) do
+ActiveRecord::Schema.define(version: 20171015132550) do
+
 
   create_table "comments", force: :cascade do |t|
     t.integer "unit_id"
@@ -68,6 +69,10 @@ ActiveRecord::Schema.define(version: 20171015001505) do
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "logo_file_name"
+    t.string "logo_content_type"
+    t.integer "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "units", force: :cascade do |t|
