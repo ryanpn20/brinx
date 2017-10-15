@@ -21,10 +21,19 @@ a:focus {
 }
 
 p.future {
-    font-size: 30px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 2px 5px 10px red;
+    }
+}
+
+p.future {
+    color: white;
+    font-size: 40px;
     padding-bottom: 2%;
-    line-height: 1.5;
-    
 }
 
 header {
@@ -41,7 +50,6 @@ header {
     background-size: cover;
     -o-background-size: cover;
 }
-
 
 
 header .header-content {
@@ -131,7 +139,6 @@ a:hover#back-to-top {
     background-color: rgba(30, 182, 232, 0.8);
     padding: 70px 0;
     text-align: center;
-    opacity: .9
 }
 
 .trending {
