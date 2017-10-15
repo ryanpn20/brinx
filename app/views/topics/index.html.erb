@@ -1,58 +1,29 @@
-<!-- <p id="notice"><%= notice %></p> -->
+<section  class="first-section">
 
-
-<div class="margin-top_angel">
-
-<div class="container">
-
-
+  <div class="container">
   <div class="row">
-    <p id="notice"><%= notice %></p>
+<div class="index-content">
+    <div class="container">
+            <% @topics.each do |topic| %>
+            <a href="blog-ici.html">
+                <div class="col-md-3">
+                    <div class="card">
 
-    <div class="col-md-8">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4>Topics</h4>
-        </div>
-        <div class="panel-body">
-          <div class="table-responsive">
-
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Language</th>
-                  <th>Description</th>
-                  <th>Status</th>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @topics.each do |topic| %>
-                <tr>
-                  <td><%= topic.name %></td>
-                  <td><%= topic.language %></td>
-                  <td><%= topic.description %></td>
-                  <td><%= topic.status %></td>
-                  <td><%= link_to 'Show', topic %></td>
-                  <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-                  <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+                        <%= image_tag topic.logo.url, class: 'img-responsive' %>
+                        <h4><%= topic.name.capitalize %></h4>
+                        <p>  </p>
+                        <%= link_to 'Commit now', new_commitment_path, class: 'blue-button' %>
+                    </div>
+                </div>
+            </a>
+            
+            <%end %>
+                        
     </div>
-  </div>
+</div>
+
+
 </div>
 </div>
 
-<br>
-
-<div class="col-md-8">
-  <%= link_to 'New Topic', new_topic_path %>
-</div>
+</section>
