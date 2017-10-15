@@ -33,7 +33,7 @@
                     <td><%= unit.duration %></td>
                     <td><%= @course.topic_id %></td>
                     <td>
-                      <%= link_to 'Start', edit_course_path(@course) %>
+                      <%= link_to 'Start', unit_path(unit) %>
                     </td>
                   </tr>
                   <% end %>
