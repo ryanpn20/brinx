@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171015132550) do
 
+
   create_table "comments", force: :cascade do |t|
     t.integer "unit_id"
     t.integer "user_id"
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20171015132550) do
     t.datetime "updated_at", null: false
     t.integer "instructor_id"
     t.text "description"
+    t.string "language"
   end
 
   create_table "instructors", force: :cascade do |t|
