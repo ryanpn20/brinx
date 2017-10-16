@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :topics
-  resources :units
+  resources :units do
+    resources :comments
+  end
   resources :instructors
   resources :courses
-  resources :comments
+  
   resources :subscriptions
   resources :commitments
   root 'static_pages#home'
