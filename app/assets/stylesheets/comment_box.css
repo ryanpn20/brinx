@@ -1,9 +1,10 @@
 @import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
 .detailBox {
-    width:320px;
-    border:1px solid #bbb;
-    margin:50px;
+    width: 320px;
+    border: 1px solid #bbb;
+    margin: 10px;
+    height: 480px;
 }
 .titleBox {
     background-color:#fdfdfd;
@@ -32,10 +33,10 @@
     margin-top:10px 0;
 }
 .commentList {
-    padding:0;
-    list-style:none;
-    max-height:200px;
-    overflow:auto;
+        padding: 0;
+    list-style: none;
+    max-height: 322px;
+    overflow: auto;
 }
 .commentList li {
     margin:0;

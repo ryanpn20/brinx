@@ -23,6 +23,12 @@
             <div class="table-container">
               <table class="table table-filter">
                 <tbody>
+                  <% if @subscriptions.count == 0 %>
+                    <div class="text-center col-md-12">
+                      <h3>You don't have courses yet, check our courses <a href="/courses">HERE</a> and start learning now.</h3>
+                    </div>
+                    
+                  <% end %>
                   <% @subscriptions.each_with_index do |subscription, index| %>
                   <tr data-status="pagado">
                     <td>

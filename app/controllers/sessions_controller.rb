@@ -13,8 +13,13 @@ class SessionsController < ApplicationController
 		
 		if user && user.authenticate(params[:password])
 			log_in user
-			flash[:success] = "Welcome back #{user.name}"
-			redirect_to dashboard_path
+			if user.class.name == 'Instructor'
+				flash[:success] = "Welcome back <span class='text-danger'>instructor</span> #{user.name}"
+				redirect_to dashboard_instructor_path 
+			else
+				flash[:success] = "Welcome back #{user.name}"
+				redirect_to dashboard_path
+			end
 		else
 			flash[:danger] = 'Invalid email/Wrong password' # Not quite right!
 			redirect_to request.referer
