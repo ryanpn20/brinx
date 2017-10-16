@@ -1,4 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+.contianer-topic {
+  margin-bottom: 28px
+}
 .progress{
     width: 150px;
     height: 150px;
