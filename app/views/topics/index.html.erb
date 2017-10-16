@@ -9,8 +9,9 @@
         <div class="index-content">
             <div class="container">
                 <% @topics.each do |topic| %>
-                <a href="blog-ici.html">
-                    <div class="col-md-3">
+
+                <a >
+                    <div class="col-md-3 contianer-topic" >
                         <div class="card">
                             <%= image_tag topic.logo.url, class: 'img-responsive topic-image' %>
                             <h4><%= topic.name.capitalize %></h4>
@@ -20,6 +21,7 @@
                         </div>
                     </div>
                 </a> 
+
                 <%end %>                    
             </div>
         </div>
