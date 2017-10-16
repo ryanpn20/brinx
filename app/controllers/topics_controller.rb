@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all.order(id: :desc)
+    # render json: @topics
   end
 
   # GET /topics/1
@@ -70,4 +71,5 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:name, :language, :description, :status, :cat, :logo)
     end
+    
 end
