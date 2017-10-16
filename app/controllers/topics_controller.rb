@@ -5,9 +5,21 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all.order(id: :desc)
+    @title  = 'Topics'
     # render json: @topics
   end
 
+  def trending
+    @topics = Topic.all.order(id: :desc)
+    @topics = @topics.map { |x| x if x.commitments.count > 0 }.compact
+    @title  = 'Trending topics <i class="fa fa-rocket"></i>'.html_safe
+    render :index
+  end
+
+  def instructor
+    @topics = Topic.all.order(id: :desc)
+    @topics = @topics.map { |x| x if x.commitments.count > 0 }.compact
+  end
   # GET /topics/1
   # GET /topics/1.json
   def show

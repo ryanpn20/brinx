@@ -29,7 +29,7 @@ class InstructorsController < ApplicationController
     if @instructor.save
       log_in @instructor
       flash[:success] = 'Register successfully completed'
-      redirect_to dashboard_path
+      redirect_to dashboard_instructor_path
     else
       flash[:errors] = @instructor.errors
       redirect_to request.referer

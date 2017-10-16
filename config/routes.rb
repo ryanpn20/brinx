@@ -11,10 +11,12 @@ Rails.application.routes.draw do
 
 
   post  'login', to: 'sessions#create'
-  
-  get 'profile', to: 'users#profile'
-  get  'logout', to: 'sessions#destroy'
-  get 'contact', to: 'static_pages#contact', as: 'contact'
-  get 'dashboard', to: 'subscriptions#index', as: 'dashboard'
+
+  get   'dashboard/instructor', to: 'topics#instructor'
+  get   'trending/topics', to: 'topics#trending'
+  get   'profile', to: 'users#profile'
+  get   'logout', to: 'sessions#destroy'
+  get   'contact', to: 'static_pages#contact', as: 'contact'
+  get   'dashboard', to: 'subscriptions#index', as: 'dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
