@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_subs, only: [:show]
   # GET /courses
   # GET /courses.json
   def index
@@ -63,6 +63,13 @@ class CoursesController < ApplicationController
   end
 
   private
+    def check_subs
+      subs = current_user.subscriptions.map { |x| x.course_id }
+      if subs.include? @course.id
+        flash[:success] = 'You are not subscribed to this course'
+        redirect_to request.referer 
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])

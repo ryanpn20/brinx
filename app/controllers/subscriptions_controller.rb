@@ -28,6 +28,7 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
     @subscription.user_id = current_user.id
     @subscription.expiration  = Time.now + 1.months
+    @subscription.status  = 'Active'
 
     if @subscription.save
       flash[:success] = 'Subscription asigned'

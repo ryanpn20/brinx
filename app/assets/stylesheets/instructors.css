@@ -6,13 +6,13 @@ body{
   background:url("http://www.wallpapersin.net/wallpapers/2013/03/Tokyo-Skyscrapers-485x728.jpg");
 
 }
-a{
+/*a{
   @include unstyled-link();
   color:#00BBBB;
   &:hover{
       color:#666;
   }
-}
+}*/
 #container{
   width:400px;
   height:500px;
