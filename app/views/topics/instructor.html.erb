@@ -7,7 +7,7 @@
     	</div>
     </div>
     <div class="row">
-    	<div class="col-md-8">
+    	<div class="col-md-6">
     	  <table class="table">
     	  	<thead>
     	  		<th>Name</th>
@@ -19,7 +19,7 @@
 
     	  <tbody>
     	  <% @topics.each do |topic| %>
-    	    
+
     	      <tr>
     	      	<td><%=topic.name%></td>
     	      	<td><%=topic.commitments.count %></td>
@@ -29,11 +29,69 @@
     	      		<%= link_to 'Apply now',  new_course_path, class:'btn btn-warning btn-xs' %>
     	      	</td>
     	      </tr>
-    	    
+
     	  <%end%>
     	  </tbody>
     	  </table>
     	</div>
+      <div class="col-md-6">
+        <div class="container">
+    <div class="row">
+        <div class="col-lg-5 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <ul class="list-group">
+                <a href="#" class="list-group-item active">
+                  <br/><br/><i class="glyphicon glyphicon-home"></i> Instructor<br/><br/>
+                  </a>
+                <a href="#" class="list-group-item ">
+                  <br/><br/><i class="glyphicon glyphicon-tasks"></i> Courses<br/><br/>
+                </a>
+                <a href="#" class="list-group-item ">
+                  <br/><br/><i class="glyphicon glyphicon-transfer"></i> Total Commits Collected<br/><br/>
+                </a>
+                <a href="#" class="list-group-item ">
+                  <br/><br/><i class="glyphicon glyphicon-fire"></i> My Trending Courses<br/><br/>
+                </a>
+              </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- flight section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <h1 class="glyphicon glyphicon-user" style="font-size:14em;color:#00001a"></h1>
+                      <h2 style="margin-top: 0;color:#00001a">Name</h2>
+                    </center>
+                </div>
+
+
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-tasks" style="font-size:12em;color:#00001a"></h1>
+                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Courses</a></h2>
+                      <h3 style="margin-top: 0;color:#00001a">Courses I Teach</h3>
+                    </center>
+                </div>
+
+
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-usd" style="font-size:12em;color:#00001a"></h1>
+                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Commitments</a></h2>
+                      <h3 style="margin-top: 0;color:#00001a">Overall Collected Commits </h3>
+                    </center>
+                </div>
+
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-fire" style="font-size:12em;color:#00001a"></h1>
+                      <h2 style="margin-top: 0;color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">Trending</a></h2>
+                      <h3 style="margin-top: 0;color:#00001a">My Top Courses</h3>
+                    </center>
+                </div>
+            </div>
+        </div>
+  </div>
+      </div>
     </div>
   </div>
 </section>
@@ -45,4 +103,5 @@
       text: '<img draggable="false" class="emoji" alt="😎" src="https://s.w.org/images/core/emoji/2.3/svg/1f60e.svg" style="max-width: 20%;">'
     });
   </script>
+</div>
 <% end %>
