@@ -26,16 +26,18 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(subscription_params)
+    @subscription.user_id = current_user.id
+    @subscription.expiration  = Time.now + 1.months
+    @subscription.status  = 'Active'
 
-    respond_to do |format|
-      if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
-        format.json { render :show, status: :created, location: @subscription }
-      else
-        format.html { render :new }
-        format.json { render json: @subscription.errors, status: :unprocessable_entity }
-      end
+    if @subscription.save
+      flash[:success] = 'Subscription asigned'
+      redirect_to dashboard_path
+    else
+      flash[:success] = @subscription.errors
+      redirect_to request.referer
     end
+
   end
 
   # PATCH/PUT /subscriptions/1
