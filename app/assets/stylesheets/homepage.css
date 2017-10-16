@@ -136,7 +136,7 @@ a:hover#back-to-top {
 
 .intro {
 	color: #fff;
-    background-color: rgba(30, 182, 232, 0.8);
+    background-color: #519ee0;
     padding: 70px 0;
     text-align: center;
 }
@@ -202,6 +202,17 @@ a:hover#back-to-top {
     right: -25px;
     top: 12px;
     color: #ff3408;
+}
+
+
+.percent {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 2px 5px 10px red;
+    }
 }
 
 .course-box-1 {

@@ -1,39 +1,58 @@
 <section  class="first-section">
 
   <div class="container">
-  <div class="row">
-  	<div class="col-md-9">
-  		<p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-md-9">
+        <p id="notice"><%= notice %></p>
 
-		<p>
-		  <strong>Name:</strong>
-		  <%= @unit.name %>
-		</p>
+        <p>
+          <strong>
+            <%= @unit.name %>
+          </strong>
 
-		<p>
-		  <strong>Duration:</strong>
-		  <%= @unit.duration %>
-		</p>
+        </p>
 
-		<p>
-		  <strong>Embed code:</strong>
-		  <%= @unit.embed_code.html_safe %>
+        <p>
+          <strong>Video Length:</strong>
+          <%= @unit.minutes   %>
+        </p>
+
+        <p>
+
+          <%= @unit.embed_code.html_safe %>
 
           <%= social_share_button_tag(@unit.name) %>
 
-		</p>
+        </p>
 
-  	</div>
-  	<div class="col-md-3">
-  		<p>
-		  <strong>Comments:</strong>
-		  <%= @unit.comments.each do |c| %>
-		   <span><%= c.comment %></span>
-		  <% end %>
-		</p>
-  	</div>
+      </div>
+      <div class="col-md-3">
+        <p>
+          <strong>Comments:</strong>
+
+          <div class="detailBox">
+            <%= @unit.comments.each do |c| %>
+            <span><%= c.comment %></span>
+            <% end %>
+
+            <div class="actionBox">
+
+              <form class="form-inline" role="form">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Your comments" />
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary">Add</button>
+                </div>
+              </form>
+            </div>
+          </div>
 
 
-</div>
-</div>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
 </section>
