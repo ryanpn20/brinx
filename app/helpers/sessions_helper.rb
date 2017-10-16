@@ -1,6 +1,7 @@
 module SessionsHelper
 	def log_in(user)
-    	session[:user_id] = user.id
+    	session[:user_id]    = user.id
+      session[:instructor] = user.class.name == 'Instructor' ? true : false
   	end
 
   	def log_out
@@ -9,7 +10,7 @@ module SessionsHelper
   	end
 
   	def current_user
-    	@current_user ||= User.find_by(id: session[:user_id])
+    	@current_user ||= session[:instructor] ? Instructor.find_by(id: session[:user_id]) : User.find_by(id: session[:user_id])
    	end
 
    	def logged_in?
