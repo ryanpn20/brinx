@@ -17,8 +17,9 @@
                         <div class="card">
                             <%= image_tag topic.logo.url, class: 'img-responsive topic-image' %>
                             <h4><%= topic.name.capitalize %></h4>
-                            <p>  </p>
-                            <a type="button" class="blue-button" data-toggle="modal" data-target="#myModal">Commit now</a>
+                            <p>Commitments: <%= topic.commitments.count %></p>
+                            <p><b><span class="text-success">Collected: $<%= sum_topic(topic) %> USD</span></b></p>
+                            <a type="button" class="blue-button" data-toggle="modal" data-target="#myModal" onclick="updateForm(<%= topic.id %>, <%= current_user.id %>)">Commit now</a>
                         </div>
                     </div>
                 </a> 
@@ -28,27 +29,42 @@
     </div>
 </div>
 <!-- Modal -->
+<%= form_for(:commitment, url: commitments_path, html: { :multipart => true, class:'well form-horizontal' }) do |form| %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+      <%= form.hidden_field :topic_id, id: 'topic_id', value: 0 %>
+      <%= form.hidden_field :user_id, id: 'user_id', value: 0 %>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create a commitment</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
-        ...
+        <blockquote>Create a commitment by paying some value to the creator of the course.</blockquote>
+        <div class="control-form">
+            <input class="form-control" name="commitment[price]" placeholder="E.g $10"> 
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Create now</button> -->
+        <%= form.submit "Create now".html_safe, class: 'btn btn-secondary' %>
       </div>
+      
     </div>
   </div>
 </div>
-
+<%end%>
 </section>
+<script>
+    function updateForm(topic, user){
+        $('#topic_id').val(topic)
+        $('#user_id').val(user)
+        console.log(topic)
+    }
+</script>
 <% if flash[:success] %>
   <script>
     swal({

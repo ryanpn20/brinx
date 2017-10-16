@@ -26,15 +26,15 @@ class CommitmentsController < ApplicationController
   def create
     @commitment = Commitment.new(commitment_params)
 
-    respond_to do |format|
-      if @commitment.save
-        format.html { redirect_to @commitment, notice: 'Commitment was successfully created.' }
-        format.json { render :show, status: :created, location: @commitment }
-      else
-        format.html { render :new }
-        format.json { render json: @commitment.errors, status: :unprocessable_entity }
-      end
+
+    if @commitment.save
+      flash[:success] = 'Your commitment has been created'
+      redirect_to request.referer
+    else
+      flash[:success] = @commitment.errors
+      redirect_to request.referer
     end
+
   end
 
   # PATCH/PUT /commitments/1
