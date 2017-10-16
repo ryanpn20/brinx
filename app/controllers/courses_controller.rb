@@ -65,7 +65,7 @@ class CoursesController < ApplicationController
   private
     def check_subs
       subs = current_user.subscriptions.map { |x| x.course_id }
-      if subs.include? @course.id
+      if !subs.include? @course.id
         flash[:success] = 'You are not subscribed to this course'
         redirect_to request.referer 
       end
