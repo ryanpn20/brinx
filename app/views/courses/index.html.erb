@@ -12,6 +12,7 @@
         <h2>Lets join to a course!</h2>
       </div>
         <hr/>
+        <div class="col-md-9">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>Courses</h4>
@@ -23,10 +24,10 @@
                 <thead>
                   <tr>
                     <th>Title</th>
-                    <!-- <th>Course type</th> -->
-                    <th class="text-center">Instructor</th>
-                    <th class="text-center">No. Units</th>
                     <th class="text-center">Language</th>
+                    <th class="text-center">Instructor</th>
+                    <th class="text-center">Units</th>
+                    <th class="text-center">Hours</th>
                     <th colspan="3"></th>
                   </tr>
                 </thead>
@@ -35,11 +36,11 @@
                   <% @courses.each do |course| %>
                   <tr>
                     <td><%= course.title %></td>
-                    <td><%= course.language %></td>
+                    <td><%= course.topic.language %></td>
                     <td class="text-center"><%= course.instructor.name %></td>
                     <td class="text-center"><%= course.units.count %></td>
+                    <td class="text-center"><%= get_total_time(course) %></td>
                     <td><%= link_to 'Show', course %></td>
-                    <!-- <td><%= link_to 'Edit', edit_course_path(course) %></td> -->
                     <td><%= link_to 'Subscribe'  %></td>
                   </tr>
                   <% end %>
@@ -49,7 +50,11 @@
             </div>
           </div>
         </div>
-      <!-- </div> -->
+
+      </div>
+      <div class="col-md-3">
+        <%= render 'layouts/partials/user_menu' %>
+      </div>
     </div>
   </div>
 </div>

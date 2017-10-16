@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_instructor, only: [:index]
   # GET /subscriptions
   # GET /subscriptions.json
   def index
@@ -63,6 +63,9 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+    def check_instructor
+      redirect_to dashboard_instructor_path if current_user.class.name == 'Instructor'
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
       @subscription = Subscription.find(params[:id])
