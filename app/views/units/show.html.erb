@@ -26,66 +26,52 @@
             <label>Comment Box</label>
             <button type="button" class="close" aria-hidden="true">&times;</button>
           </div>
-          <div class="commentBox">
+          <!-- <div class="commentBox">
             <% @unit.comments.each do |c| %>
               <span><%= c.comment %></span>
             <% end %>      
-          </div>
+          </div> -->
           <div class="actionBox">
             <ul class="commentList">
-              <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/50/50" />
-                </div>
-                <div class="commentText">
-                  <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-              </li>
-              <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/45/45" />
-                </div>
-                <div class="commentText">
-                  <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-              </li>
-              <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/40/40" />
-                </div>
-                <div class="commentText">
-                  <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-              </li>
-              <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/40/40" />
-                </div>
-                <div class="commentText">
-                  <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-              </li>
-              <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/45/45" />
-                </div>
-                <div class="commentText">
-                  <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-              </li>
+              <% @unit.comments.order(id: :desc).each do |comment| %>
+                <li>
+                  <div class="commenterImage">
+
+                    <%= image_tag(comment.user.avatar) %>
+                  </div>
+                  <div class="commentText">
+                    <p class=""><%= comment.comment %></p> <span class="date sub-text"><span class="text-success"><%= comment.user.name %> </span>on <%= comment.created_at.strftime("%b %d, %y") %></span>
+                  </div>
+                </li>
+              <%end%>
+              
             </ul>
-            <form class="form-inline" role="form">
+
+            <%= form_for(:comment, url: unit_comments_path(@unit), html: { class: 'form-inline'} ) do |f| %>
+
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="Your comments" />
-              </div>
-              <div class="form-group">
-                  <button class="btn btn-primary">Add</button>
+                <input class="form-control" name="comment[comment]" type="text" placeholder="Your comments" style="
+    width: 235px;
+" />
 
               </div>
-            </form>
+              <div class="form-group">
+                <%= f.submit 'ADD', class: 'btn btn-primary' %>
+              </div>
+
+            <%end%>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<% if flash[:success] %>
+  <script>
+    swal({
+      html:true,
+      title: "<%= flash[:success] %>",
+      text: '<img draggable="false" class="emoji" alt="😀" src="https://s.w.org/images/core/emoji/2.3/svg/1f600.svg" style="max-width: 20%;">'
+    });
+  </script>
+<% end %>
