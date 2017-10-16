@@ -378,6 +378,7 @@ a.emoji {
 .first-section {
   padding-top: 8%;
   /*min-height: 1800px;*/
+  min-height: 100%;
   padding-bottom: 80px
 
 }
