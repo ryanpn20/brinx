@@ -1,5 +1,37 @@
+<div class="container">
+	<div class="row">
+    <section class="content">
+
 <h1>New Course</h1>
 
-<%= render 'form', course: @course %>
+<div class="col-md-8 col-md-offset-2">
+  <div>
+    <div class="panel-body">
 
-<%= link_to 'Back', courses_path %>
+      <div class="table-container">
+        <table class="table table-filter">
+
+
+          <div class="col-md-8 col-md-offset-2">
+    				<div class="panel panel-default">
+    					<div class="panel-body">
+
+
+            <%= render 'form', course: @course %>
+
+            <%= link_to 'Back', courses_path %>
+
+
+						<div class="table-container">
+							<table>
+
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+</div>

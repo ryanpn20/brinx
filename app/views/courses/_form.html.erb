@@ -11,27 +11,33 @@
     </div>
   <% end %>
 
+<div class="form-group">
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :course_title %>
+    <%= form.label :title, class: "" %>
+    <%= form.text_field :title, id: :course_title, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :course_type %>
-    <%= form.text_field :course_type, id: :course_course_type %>
+    <%= form.label :course_type, class: "" %>
+    <%= form.text_field :course_type, id: :course_course_type, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :instructor_id %>
-    <%= form.number_field :instructor_id, id: :course_instructor_id %>
+    <%= form.label :instructor_id, class: "" %>
+    <%= form.number_field :instructor_id, id: :course_instructor_id , class: "form-control"%>
   </div>
 
   <div class="field">
-    <%= form.label :topic_id %>
-    <%= form.number_field :topic_id, id: :course_topic_id %>
+    <%= form.label :topic_id, class: "" %>
+    <%= form.number_field :topic_id, id: :course_topic_id, class: "form-control" %>
   </div>
+
+</div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
+
+
 <% end %>
