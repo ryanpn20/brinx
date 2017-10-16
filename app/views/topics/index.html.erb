@@ -1,14 +1,11 @@
 <section  class="first-section">
     <div class="text-center">
-        <h1>Topics</h1>
+        <h1><%=@title%></h1>
         <hr/>
     </div>
 <div class="container">
     <div class="row">
         <!-- Button trigger modal -->
-
-
-
         <div class="index-content">
             <div class="container">
                 <% @topics.each do |topic| %>
@@ -19,7 +16,7 @@
                             <h4><%= topic.name.capitalize %></h4>
                             <p>Commitments: <%= topic.commitments.count %></p>
                             <p><b><span class="text-success">Collected: $<%= sum_topic(topic) %> USD</span></b></p>
-                            <a type="button" class="blue-button" data-toggle="modal" data-target="#myModal" onclick="updateForm(<%= topic.id %>, <%= current_user.id %>)">Commit now</a>
+                            <a type="button" href="#" class="blue-button" data-toggle="modal" data-target="#myModal" onclick="updateForm(<%= topic.id %>, <%= current_user.id %>)">Commit now</a>
                         </div>
                     </div>
                 </a> 
