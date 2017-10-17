@@ -20,9 +20,9 @@
                             <a type="button" href="#" class="blue-button" data-toggle="modal" data-target="#myModal" onclick="updateForm(<%= topic.id %>, <%= current_user.id %>)">Commit now</a>
                         </div>
                     </div>
-                </a> 
+                </a>
 
-                <%end %>                    
+                <%end %>
             </div>
         </div>
     </div>
@@ -40,16 +40,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
+
       <div class="modal-body">
-        <blockquote>Create a commitment by paying some value to the creator of the course.</blockquote>
+        <blockquote>Create a commitment by placing a pledge to the creator of the course. If the course is not created after 30 days, your pledge will be fully refunded back to your payment method.</blockquote>
         <div class="control-form">
-            <input class="form-control" name="commitment[price]" placeholder="E.g $10"> 
+            <input class="form-control" name="commitment[price]" placeholder="10">
         </div>
         <div class="form-group">
           <div class="card">
             <div class="col-md-12">
-              <label for="exampleInputPassword1">Paymenth Methods</label>
+              <label for="exampleInputPassword1">Payment Methods</label>
             </div>
             <div class="col-md-6">
               <img src="http://i76.imgup.net/accepted_c22e0.png" class="img-responsive form-control" style="height: 60px;">
@@ -64,7 +64,7 @@
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Create now</button> -->
         <%= form.submit "Create now".html_safe, class: 'btn btn-secondary' %>
       </div>
-      
+
     </div>
   </div>
 </div>

@@ -1,37 +1,275 @@
-<div class="container">
-	<div class="row">
-    <section class="content">
+<section  class="first-section">
+  <div class="container">
+    <div class="row">
+      <div class="container-form">
 
-<h1>New Course</h1>
+        <h1 class="create-topic">Apply to create this Topic</h1>
 
-<div class="col-md-8 col-md-offset-2">
-  <div>
-    <div class="panel-body">
+        <%= form_for(:topic, url: topics_path, html: { :multipart => true, class:'well form-horizontal' }) do |form| %>
+          <fieldset>
 
-      <div class="table-container">
-        <table class="table table-filter">
+						<div class="form-group">
+              <label class="col-md-4 control-label">Experince</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <textarea class="form-control" name="topic[description]" placeholder="Please list your experince in relationship to this requested course"></textarea>
+                </div>
+              </div>
+            </div>
 
-
-          <div class="col-md-8 col-md-offset-2">
-    				<div class="panel panel-default">
-    					<div class="panel-body">
-
-
-            <%= render 'form', course: @course %>
-
-            <%= link_to 'Back', courses_path %>
-
-
-						<div class="table-container">
-							<table>
-
-							</table>
+						<div class="form-group">
+							<label class="col-md-4 control-label">How many years have you spoken the laguage that is requested?</label>
+							<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+									<textarea class="form-control" name="topic[description]" placeholder=""></textarea>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
 
-			</div>
-		</section>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Bio</label>
+							<div class="col-md-4 inputGroupContainer">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+									<textarea class="form-control" name="topic[description]" placeholder="Please give a detailed explaintion of why you are qualified to create this course"></textarea>
+								</div>
+							</div>
+						</div>
 
-	</div>
-</div>
+
+             <div class="form-group">
+              <label class="col-md-4 control-label">Field of expertise</label>
+                <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select name="topic[cat]" class="form-control selectpicker" >
+                    <option value="devlopment">Development</option>
+                    <option value="data">Data Science</option>
+                    <option value="it">IT</option>
+                    <option value="analytics">Analytics</option>
+                    <option value="design">Design</option>
+                    <option value="software">Software</option>
+                    <option value="hardware">Hardware</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">First language spoken</label>
+              <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select name="topic[language]" class="form-control selectpicker" >
+                    <option value="" >Please select your language</option>
+                    <option value="Afrikanns">Afrikanns</option>
+                    <option value="Albanian">Albanian</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Armenian">Armenian</option>
+                    <option value="Basque">Basque</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Bulgarian">Bulgarian</option>
+                    <option value="Cambodian">Cambodian</option>
+                    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                    <option value="Croation">Croation</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
+                    <option value="Estonian">Estonian</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finnish">Finnish</option>
+                    <option value="French">French</option>
+                    <option value="Georgian">Georgian</option>
+                    <option value="German">German</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <option value="Hebrew">Hebrew</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Hungarian">Hungarian</option>
+                    <option value="Icelandic">Icelandic</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Irish">Irish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Javanese">Javanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Latin">Latin</option>
+                    <option value="Latvian">Latvian</option>
+                    <option value="Lithuanian">Lithuanian</option>
+                    <option value="Macedonian">Macedonian</option>
+                    <option value="Malay">Malay</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Maltese">Maltese</option>
+                    <option value="Maori">Maori</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Mongolian">Mongolian</option>
+                    <option value="Nepali">Nepali</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Quechua">Quechua</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Samoan">Samoan</option>
+                    <option value="Serbian">Serbian</option>
+                    <option value="Slovak">Slovak</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Swedish ">Swedish </option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Tatar">Tatar</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Tibetan">Tibetan</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Ukranian">Ukranian</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Uzbek">Uzbek</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="Welsh">Welsh</option>
+                    <option value="Xhosa">Xhosa</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+						<div class="form-group">
+              <label class="col-md-4 control-label">Second language spoken</label>
+              <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                  <select name="topic[language]" class="form-control selectpicker" >
+                    <option value="" >Please select your language</option>
+                    <option value="Afrikanns">Afrikanns</option>
+                    <option value="Albanian">Albanian</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Armenian">Armenian</option>
+                    <option value="Basque">Basque</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Bulgarian">Bulgarian</option>
+                    <option value="Cambodian">Cambodian</option>
+                    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                    <option value="Croation">Croation</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="English">English</option>
+                    <option value="Estonian">Estonian</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finnish">Finnish</option>
+                    <option value="French">French</option>
+                    <option value="Georgian">Georgian</option>
+                    <option value="German">German</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <option value="Hebrew">Hebrew</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Hungarian">Hungarian</option>
+                    <option value="Icelandic">Icelandic</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Irish">Irish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Javanese">Javanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Latin">Latin</option>
+                    <option value="Latvian">Latvian</option>
+                    <option value="Lithuanian">Lithuanian</option>
+                    <option value="Macedonian">Macedonian</option>
+                    <option value="Malay">Malay</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Maltese">Maltese</option>
+                    <option value="Maori">Maori</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Mongolian">Mongolian</option>
+                    <option value="Nepali">Nepali</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Quechua">Quechua</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Samoan">Samoan</option>
+                    <option value="Serbian">Serbian</option>
+                    <option value="Slovak">Slovak</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swahili">Swahili</option>
+                    <option value="Swedish ">Swedish </option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Tatar">Tatar</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Tibetan">Tibetan</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Ukranian">Ukranian</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Uzbek">Uzbek</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="Welsh">Welsh</option>
+                    <option value="Xhosa">Xhosa</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Please attach your GitHub account link</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <textarea class="form-control" name="topic[description]" placeholder="GitHub account link"></textarea>
+                </div>
+              </div>
+            </div>
+
+						<p>Please attach your resume, along with other documents that will help with certifying you to create this course</p>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label"></label>
+              <div class="col-md-4">
+                <%= form.file_field :logo %>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-4 control-label"></label>
+              <div class="col-md-4">
+
+                <%= form.submit "Submit".html_safe, class: 'btn btn-primary' %>
+              </div>
+            </div>
+
+            <!-- <div class="form-group">
+              <label class="col-md-4 control-label"></label>
+              <div class="col-md-4 social-links">
+                <strong>Share your commitment!</strong>
+                 <br/><br/>
+                <a href="#"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-google-plus fa-3x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+              </div>
+            </div> -->
+
+          </fieldset>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<%= link_to 'Back', courses_path %>
