@@ -14,7 +14,7 @@
     	  		<th>No. commitments</th>
     	  		<th>Description</th>
     	  		<th>Total Collected</th>
-    	  		<th></th>
+            <th>Language</th>
     	  	</thead>
 
     	  <tbody>
@@ -25,6 +25,9 @@
     	      	<td><%=topic.commitments.count %></td>
     	      	<td><%=topic.description.truncate(27) %></td>
     	      	<td><b>$<%=sum_topic(topic)%> USD</b></td>
+              <td>
+                <%=topic.language%>
+              </td>
     	      	<td>
     	      		<%= link_to 'Apply now',  new_course_path, class:'btn btn-warning btn-xs' %>
     	      	</td>
