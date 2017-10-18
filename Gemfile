@@ -38,7 +38,7 @@ gem "rest-client", "~> 1.6.7"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-group :production  do 
+group :production  do
   gem 'pg'
 end
 

@@ -16,12 +16,9 @@
  *= require_self
  */
 
-$size: 36px;
 
-.social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-  }
+.social-share-button .ssb-icon {
+  background-size: 36px 36px;
+  height: 36px;
+  width: 36px;
 }
