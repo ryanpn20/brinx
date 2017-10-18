@@ -391,59 +391,13 @@ a:hover .middle {
 }
 
 
-/*input[type=text] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
 
-input[type=text]:focus {
-    width: 100%;
-}*/
-
-
-{
-   box-sizing: border-box;
-}
-/*
-input[type=text], select, textarea{
-   width: 100%;
-   padding: 12px;
-   border: 1px solid #ccc;
-   border-radius: 4px;
-   box-sizing: border-box;
-   resize: vertical;
-   color: black;
-}
-}*/
 
 label {
    padding: 12px 12px 12px 0;
    display: inline-block;
 }
-/*
-input[type=submit] {
-   background-color: #337ab7;
-   color: white;
-   padding: 12px 20px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   float: right;
-}*/
 
-/*input[type=submit]:hover {
-   background-color: #45a049;
-}*/
 
 .section-header {
   padding-top: 15px;
@@ -677,14 +631,7 @@ input[type=submit] {
     }
 }
 
-/*.btn-default {
-    border-color: #fff;
-    color: #222;
-    background-color: #fff;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
-}*/
+
 
 .btn-default:hover,
 .btn-default:focus,

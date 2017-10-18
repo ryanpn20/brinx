@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171016004816) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.integer "unit_id"
     t.integer "user_id"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171016004816) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "phone", limit: 8
+    t.bigint "phone"
     t.string "password_digest"
     t.text "skills"
   end
@@ -95,7 +98,7 @@ ActiveRecord::Schema.define(version: 20171016004816) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "phone", limit: 8
+    t.bigint "phone"
   end
 
 end
